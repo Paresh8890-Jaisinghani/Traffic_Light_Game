@@ -3,7 +3,7 @@ body {
     background-color: #080710;
 }
 
-.main_Menu{
+#main_Menu{
     display: none;
     font-family: Arial, sans-serif;
     justify-content: center;

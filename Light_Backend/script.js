@@ -80,7 +80,6 @@ const startGame = () => {
     setTimeout(endGame, 15000);
     // setTimeout(endGame, 1); // change karna hai
     currentRound++;
-    updateStartButton();
 };
 
 let previousLight = '';
@@ -165,16 +164,9 @@ const endGame = async () => {
         res1.innerHTML = `Round 1 Score: ${roundScores[0]}`;
         res2.innerHTML = `Round 2 Score: ${roundScores[1]}`;
         res3.innerHTML = `Round 3 Score: ${roundScores[2]}`;
-        res4.innerHTML = `Final Score: ${averageScore.toFixed(2)}`;
+        res4.innerHTML = `Final Score: ${averageScore.toFixed(2)}%`;
         result.style.display = 'block';
         container.style.display = 'none';
-        // alert( `Final Score: ${averageScore.toFixed(2)}`);
-
-        totalScore = 0; // Reset totalScore for the next game
-        currentRound = 0;
-        roundCount = 0;
-        roundScores = []; // Reset roundScores for the next game
-
 
         try {
             const otp = await getotpFromUser();
@@ -185,9 +177,9 @@ const endGame = async () => {
                 },
 
                 body: JSON.stringify({
-                    TrafficLightScore1: `${roundScores[0]}`,
-                    TrafficLightScore2: `${roundScores[1]}`,
-                    TrafficLightScore3: `${roundScores[2]}`,
+                    TrafficLightScore1: roundScores[0],
+                    TrafficLightScore2: roundScores[1],
+                    TrafficLightScore3: roundScores[2],
                     otpcode: otp
                 })
             });
@@ -198,6 +190,13 @@ const endGame = async () => {
             console.error('Error saving score:', err.message);
         }
 
+
+        // alert( `Final Score: ${averageScore.toFixed(2)}`);
+
+        totalScore = 0; // Reset totalScore for the next game
+        currentRound = 0;
+        roundCount = 0;
+        roundScores = []; // Reset roundScores for the next game
 
     } else {
         startBtn.style.display = 'block';
@@ -213,13 +212,5 @@ const endGame = async () => {
     score = 0;
     intervalId = null;
 };
-
-// const updateStartButton = () => {
-//     if (currentRound === 3) {
-//         startBtn.innerText = 'Start Trial Round';
-//     } else if (currentRound <= 3) {
-//         startBtn.innerText = `Start Round ${currentRound}`;
-//     }
-// };
 
 startBtn.addEventListener('click', startGame);
