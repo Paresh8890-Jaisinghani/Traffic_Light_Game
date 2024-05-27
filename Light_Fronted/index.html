@@ -9,15 +9,36 @@
 </head>
 
 <body>
-    <div id="container">
-        <div class="traffic-light">
-            <div id="red" class="light"></div>
-            <div id="yellow" class="light"></div>
-            <div id="green" class="light"></div>
+
+    <div class="sec">
+        <div class="background">
+          <div class="shape"></div>
+          <div class="shape"></div>
         </div>
-        <button id="Click">Click</button>
-        <button id="start-btn">Start</button>
+        <form id="loginform">
+          <h3>Login Here</h3>
+          <h2>NOTE:</h2>
+          <h1>Please check your email for the code.</h1>
+    
+          <input type="text" placeholder="Enter Your Code" id="otp" maxlength="4" autocomplete="off">
+    
+          <button type="submit" id="log">Log In</button>
+        </form>
     </div>
+
+<div class="main_Menu">
+    <ul>
+          <div id="container">
+            <div class="traffic-light">
+                <div id="red" class="light"></div>
+                <div id="yellow" class="light"></div>
+                <div id="green" class="light"></div>
+            </div>
+            <button id="start-btn">Start</button>
+        </div>
+        <button id="Click" onclick="press()">Click</button>
+    </ul>
+    
     <div id="result">
         <p>Result:</p>
         <div id="res1"></div>
@@ -27,7 +48,8 @@
         <div> </div>
         <a href="http://localhost:3000/task5"><button id="next">Next</button></a>
     </div>
-
+</div>
+</body>
     <script src="../Light_Backend/script.js"></script>
 </body>
 

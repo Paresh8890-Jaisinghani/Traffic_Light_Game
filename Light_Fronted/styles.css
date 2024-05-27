@@ -1,12 +1,19 @@
 body {
+    margin: 0;
+    background-color: #080710;
+}
+
+.main_Menu{
+    display: none;
     font-family: Arial, sans-serif;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
     margin: 0;
     background-color: #6289bd;
 }
+
 
 #container {
     display: flex;
@@ -21,6 +28,8 @@ body {
 }
 
 #next {
+    margin-top: 10px;
+    margin-left: 22%;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -93,6 +102,8 @@ a {
 }
 
 #Click {
+    width: 125px;
+    margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -154,3 +165,142 @@ a {
     padding: 5px;
     padding-left: 0px;
 }
+
+
+/* 
+Form Style */
+
+.sec{
+    display: initial;
+  }
+  
+  .sec .background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+  }
+  .sec .background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+  }
+ .sec .shape:first-child{
+    background: linear-gradient(
+        #de0e0e,
+        #2374f6
+    );
+    left: -80px;
+    top: -70px;
+  }
+ .sec .shape:last-child{
+    background: linear-gradient(
+        to right,
+        #de0e0e,
+        #2374f6
+    );
+    right: -30px;
+    bottom: -70px;
+  }
+  
+ 
+.sec form h1{
+    display: block;
+    letter-spacing: .5px;
+    margin-top: 15px;
+    padding-top:8px;
+    font-size: 1.5em;
+    font-weight: 500;
+    /* margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate; */
+  }
+
+
+ .sec form{
+    height: 400px;
+    width: 335px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+  }
+ .sec form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+  }
+ .sec form h3{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    display: block;
+    /* font-size: 1.5em; */
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    /* font-weight: bold; */
+    unicode-bidi: isolate;
+  }
+  
+ .sec label{
+    display: block;
+    margin-top: 30px;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .sec input{
+    display: block;
+    height: 50px;
+    width: 94%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    border: 1px solid white;
+    padding: 0 10px;
+    margin-top: 60px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+ .sec ::placeholder{
+    color: #e5e5e5;
+  }
+  .sec #log{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+ .sec #log:hover{
+    color: white;
+    transition: 0.4s;
+    background-color: #080710;
+  }
+  
+  @media (max-width:500px) {
+    .shape{
+      display: none;
+    }
+  }
+  
+  
+  
