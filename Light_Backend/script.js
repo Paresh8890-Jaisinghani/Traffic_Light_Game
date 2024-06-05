@@ -101,7 +101,7 @@ const changeLight = () => {
         greenLight.style.backgroundColor = 'black';
     } else if (randomLight === 'yellow') {
         redLight.style.backgroundColor = 'black';
-        yellowLight.style.backgroundColor = 'yellow';
+        yellowLight.style.backgroundColor = '#ffbf00';
         greenLight.style.backgroundColor = 'black';
     } else {
         roundCount++;
@@ -120,7 +120,7 @@ const press = () => {
         score++;
     }
 
-    if ((redLight.style.backgroundColor === 'red' || yellowLight.style.backgroundColor === 'yellow')) {
+    if ((redLight.style.backgroundColor === 'red' || yellowLight.style.backgroundColor === '#ffbf00')) {
         audio1.play();
     }
 
@@ -136,7 +136,7 @@ const handleKeyDown = (event) => {
         score++;
     }
 
-    if ((event.key === ' ') && (redLight.style.backgroundColor === 'red' || yellowLight.style.backgroundColor === 'yellow')) {
+    if ((event.key === ' ') && (redLight.style.backgroundColor === 'red' || yellowLight.style.backgroundColor === '#ffbf00')) {
         audio1.play();
     }
 
@@ -157,14 +157,9 @@ const endGame = async () => {
         const averageScore = (totalScore * 100) / round;
         startBtn.style.display = 'none';
         next.style.display = 'initial';
-        // Display scores for each round
-        // for (let i = 0; i < roundScores.length; i++) {
-        //     alert(`Round ${i + 1} Score: ${roundScores[i]}`);
-        // }
         res1.innerHTML = `Round 1 Score: ${roundScores[0]}`;
         res2.innerHTML = `Round 2 Score: ${roundScores[1]}`;
         res3.innerHTML = `Round 3 Score: ${roundScores[2]}`;
-        res4.innerHTML = `Final Score: ${averageScore.toFixed(2)}%`;
         result.style.display = 'block';
         container.style.display = 'none';
 
