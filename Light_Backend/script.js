@@ -31,6 +31,21 @@ let roundScores = []; // Array to store scores for each round
 
 let otp;
 
+
+
+let isNavigatingAway = false; // Flag to track if the user clicked the "Next" button
+
+// Function to warn the user before reloading or leaving the page
+function warnUserBeforeReload(event) {
+    if (!isNavigatingAway) {
+        const confirmationMessage = "If you reload the page, your score will be deleted.";
+        (event || window.event).returnValue = confirmationMessage; // Standard for most browsers
+        return confirmationMessage; // Required for some older browsers
+    }
+}
+
+
+
 loginform.addEventListener("submit", async function(ev){
     ev.preventDefault();
     const temp = number.value;
@@ -60,6 +75,7 @@ loginform.addEventListener("submit", async function(ev){
         sec.style.display = "none";
         mainMenu.style.display = "flex";
         alert("You are logged in successfully.");
+        window.addEventListener("beforeunload",warnUserBeforeReload);
     } catch (err) {
         console.error('Error logging in:', err.message);
         alert("An error occurred. Please try again.");
@@ -147,16 +163,27 @@ const handleKeyDown = (event) => {
 };
 
 
+function navigateToNext() {
+    isNavigatingAway = true;
+    
+    window.location.href = "http://localhost:3002/quiz"; // Replace with the actual URL of the next page
+    
+}
+  
 
 const endGame = async () => {
     clearInterval(intervalId);
     round += roundCount;
     totalScore += score;
+    if(score > roundCount){
+        score = roundCount
+    }
     roundScores.push(`${score}/${roundCount}`); // Push score in the desired format
     if (currentRound === 3) {
         const averageScore = (totalScore * 100) / round;
         startBtn.style.display = 'none';
         next.style.display = 'initial';
+        next.addEventListener("click",navigateToNext);
         res1.innerHTML = `Round 1 Score: ${roundScores[0]}`;
         res2.innerHTML = `Round 2 Score: ${roundScores[1]}`;
         res3.innerHTML = `Round 3 Score: ${roundScores[2]}`;
