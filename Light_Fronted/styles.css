@@ -15,6 +15,7 @@ body {
 }
 
 
+
 #container {
     display: flex;
     text-align: center;
@@ -29,7 +30,7 @@ body {
 
 #next {
     margin-top: 10px;
-    margin-left: 22%;
+    margin-left: 26%;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -124,7 +125,7 @@ a {
 }
 
 #result {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 20px;
     background: #fff;
     border-radius: 5px;
@@ -147,22 +148,22 @@ a {
 }
 
 #res1 {
-    padding: 5px;
+    padding: 6px;
     padding-left: 0px;
 }
 
 #res2 {
-    padding: 5px;
+    padding: 6px;
     padding-left: 0px;
 }
 
 #res3 {
-    padding: 5px;
+    padding: 6px;
     padding-left: 0px;
 }
 
 #res4 {
-    padding: 5px;
+    padding: 6px;
     padding-left: 0px;
 }
 
@@ -301,6 +302,3 @@ Form Style */
       display: none;
     }
   }
-  
-  
-  

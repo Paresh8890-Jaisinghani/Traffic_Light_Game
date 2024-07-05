@@ -178,6 +178,9 @@ const endGame = async () => {
     if(score > roundCount){
         score = roundCount
     }
+    if(score < 0){
+        score = 1;
+    }
     roundScores.push(`${score}/${roundCount}`); // Push score in the desired format
     if (currentRound === 3) {
         const averageScore = (totalScore * 100) / round;
