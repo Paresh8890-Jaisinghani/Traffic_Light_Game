@@ -1,7 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
     margin: 0;
     background-color: #080710;
 }
+
 
 #main_Menu{
     display: none;
@@ -16,7 +23,7 @@ body {
 
 
 
-#container {
+.title #container {
     display: flex;
     text-align: center;
     border: 2px solid black;
@@ -302,3 +309,23 @@ Form Style */
       display: none;
     }
   }
+
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+
+
+
+.title .text{
+    font-size: 40px;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 40px;
+    width: 100%;
+    text-align: center;
+}

@@ -16,6 +16,7 @@ const loginform = document.getElementById("loginform");
 const number = document.getElementById("otp");
 const mainMenu = document.getElementById("main_Menu");
 const sec = document.querySelector(".sec");
+const div = document.querySelector(".title .text")
 
 
 next.style.display = 'none';
@@ -90,6 +91,7 @@ loginform.addEventListener("submit", async function(ev){
 
 
 const startGame = () => {
+    div.innerHTML = "Click at green signal"
     startBtn.style.display = 'none';
     click.style.display = 'block';
     intervalId = setInterval(changeLight, 800);
@@ -172,6 +174,7 @@ function navigateToNext() {
   
 
 const endGame = async () => {
+    div.innerHTML = "Click Start button"
     clearInterval(intervalId);
     round += roundCount;
     totalScore += score;
@@ -183,6 +186,7 @@ const endGame = async () => {
     }
     roundScores.push(`${score}/${roundCount}`); // Push score in the desired format
     if (currentRound === 3) {
+        div.style.display= "none";
         const averageScore = (totalScore * 100) / round;
         startBtn.style.display = 'none';
         next.style.display = 'initial';
