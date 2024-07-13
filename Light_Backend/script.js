@@ -91,7 +91,7 @@ loginform.addEventListener("submit", async function(ev){
 
 
 const startGame = () => {
-    div.innerHTML = "Click at green signal"
+    div.innerHTML = "Click on the green signal."
     startBtn.style.display = 'none';
     click.style.display = 'block';
     intervalId = setInterval(changeLight, 800);
@@ -174,7 +174,7 @@ function navigateToNext() {
   
 
 const endGame = async () => {
-    div.innerHTML = "Click Start button"
+    div.innerHTML = "Click the Start button."
     clearInterval(intervalId);
     round += roundCount;
     totalScore += score;
