@@ -191,9 +191,9 @@ const endGame = async () => {
         startBtn.style.display = 'none';
         next.style.display = 'initial';
         next.addEventListener("click",navigateToNext);
-        res1.innerHTML = `Round 1 Score: ${roundScores[0]}`;
-        res2.innerHTML = `Round 2 Score: ${roundScores[1]}`;
-        res3.innerHTML = `Round 3 Score: ${roundScores[2]}`;
+        res1.innerHTML = `Score 1 : ${roundScores[0]}`;
+        res2.innerHTML = `Score 2 : ${roundScores[1]}`;
+        res3.innerHTML = `Score 3 : ${roundScores[2]}`;
         result.style.display = 'block';
         container.style.display = 'none';
 

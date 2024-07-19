@@ -37,7 +37,7 @@ body {
 
 #next {
     margin-top: 10px;
-    margin-left: 26%;
+    margin-left: 21%;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -137,7 +137,7 @@ a {
     background: #fff;
     border-radius: 5px;
     display: flex;
-    padding: 25px 30px;
+    padding: 25px 60px;
     /* width: 450px; */
     align-items: center;
     flex-direction: column;
@@ -152,6 +152,9 @@ a {
     z-index: 5;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
+}
+#result h2{
+    margin-bottom: 20px;
 }
 
 #res1 {
